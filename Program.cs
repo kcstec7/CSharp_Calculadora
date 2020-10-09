@@ -37,8 +37,7 @@ namespace Calculator
             Console.WriteLine("--------------------");
             Console.WriteLine("Informe uma opção: ");
 
-            //Aqui! testar para não dar erro com vazio
-            short opcao = short.Parse(Console.ReadLine());
+            short opcao = Testar_RetornarShort(Console.ReadLine());
 
             switch (opcao)
             {
@@ -58,6 +57,33 @@ namespace Calculator
             Menu();
         }
 
+        static short Testar_RetornarShort(string valorDigitado)
+        {
+            if (String.IsNullOrWhiteSpace(valorDigitado))
+            {
+                return 0;
+            }
+            else
+            {
+                return short.Parse(valorDigitado);
+            }
+        }
+
+        static float Testar_RetornarFloat(string valorDigitado)
+        {
+            if (String.IsNullOrWhiteSpace(valorDigitado))
+            {
+                Console.WriteLine(" *** Nada informado, este valor será zero *** ");
+                Console.WriteLine();
+
+                return 0;
+            }
+            else
+            {
+                return float.Parse(valorDigitado);
+            }
+        }
+
         static void Soma()
         {
             Console.Clear();
@@ -67,10 +93,10 @@ namespace Calculator
             Console.WriteLine("--------------------");
 
             Console.WriteLine("Primeiro valor: ");
-            float valor1 = float.Parse(Console.ReadLine()); // Faz ler a linha para armazenar o valor
+            float valor1 = Testar_RetornarFloat(Console.ReadLine()); // Faz ler a linha para armazenar o valor
 
             Console.WriteLine("Segundo valor: ");
-            float valor2 = float.Parse(Console.ReadLine());
+            float valor2 = Testar_RetornarFloat(Console.ReadLine());
 
             float resultado = valor1 + valor2;
 
@@ -93,10 +119,10 @@ namespace Calculator
             Console.WriteLine("----------------------------");
 
             Console.WriteLine("Primeiro valor: ");
-            float valor1 = float.Parse(Console.ReadLine());
+            float valor1 = Testar_RetornarFloat(Console.ReadLine());
 
             Console.WriteLine("Segundo valor: ");
-            float valor2 = float.Parse(Console.ReadLine());
+            float valor2 = Testar_RetornarFloat(Console.ReadLine());
 
             Console.WriteLine();
 
@@ -121,7 +147,7 @@ namespace Calculator
             do
             {
                 Console.WriteLine("Primeiro valor: ");
-                valor1 = float.Parse(Console.ReadLine());
+                valor1 = Testar_RetornarFloat(Console.ReadLine());
 
                 if (valor1 == 0)
                 {
@@ -135,7 +161,7 @@ namespace Calculator
             do
             {
                 Console.WriteLine("Segundo valor: ");
-                valor2 = float.Parse(Console.ReadLine());
+                valor2 = Testar_RetornarFloat(Console.ReadLine());
 
                 if (valor2 == 0)
                 {
@@ -164,10 +190,10 @@ namespace Calculator
             Console.WriteLine("--------------------------------");
 
             Console.WriteLine("Primeiro valor: ");
-            float valor1 = float.Parse(Console.ReadLine());
+            float valor1 = Testar_RetornarFloat(Console.ReadLine());
 
             Console.WriteLine("Segundo valor: ");
-            float valor2 = float.Parse(Console.ReadLine());
+            float valor2 = Testar_RetornarFloat(Console.ReadLine());
 
             Console.WriteLine();
 
